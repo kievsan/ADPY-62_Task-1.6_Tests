@@ -2,9 +2,11 @@
 # Домашнее задание к лекции «Разработка тестов»
 
 from py_basic_task import main_menu
+from lets_use_API_Yandex import main_for_API_Yandex
 
 
 if __name__ == '__main__':
+    start_check_API = 1
     documents = [
         {"type": "passport", "number": "2207 876234", "name": "Василий Гупкин"},
         {"type": "invoice", "number": "11-2", "name": "Геннадий Покемонов"},
@@ -16,4 +18,7 @@ if __name__ == '__main__':
         '3': []
     }
 
-    main_menu(documents, directories)
+    if start_check_API:
+        main_for_API_Yandex()
+    else:
+        main_menu(documents, directories)
