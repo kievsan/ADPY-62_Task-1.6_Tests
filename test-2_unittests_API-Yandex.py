@@ -7,7 +7,7 @@
 import unittest
 from parameterized import parameterized, parameterized_class
 from mock import patch, MagicMock
-import lets_use_API_Yandex
+import lets_use_API_Yandex_Disk
 
 
 class APIYandexTest(unittest.TestCase):
@@ -15,7 +15,7 @@ class APIYandexTest(unittest.TestCase):
                            ('http://yandex.ru', 'get', 2),
                            ('http://yandex.ru/get', 'get', 2), ])
     def test_request(self, url, request, expected_status):
-        sut = lets_use_API_Yandex.check_requests
+        sut = lets_use_API_Yandex_Disk.check_requests
         actual_status = int(sut(url, request)/100)
         self.assertEqual(expected_status, actual_status,
                          f'Ошибка выполнения запроса!')
